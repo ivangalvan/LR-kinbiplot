@@ -3,8 +3,7 @@ setwd("github")
 source("logratio_biplot_pca.R")
 
 
-# logratio biplot with "UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS" relationships 
-# and peel and zoom approach
+# logratio biplot with "UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS" relationships and peel and zoom approach
 
 my_logpca = logratio_biplot_pca(data.in="data/CEU",
                                 data.out = "CEU_population",
