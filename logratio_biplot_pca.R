@@ -19,7 +19,7 @@ logratio_biplot_pca <- function(data.in = data,
   dir.create("outputs")
   dir.create("outputs/plots")
   
-  list.of.packages <- c("data.table","dplyr","HardyWeinberg","compositions","plyr")
+  list.of.packages <- c("data.table","dplyr","HardyWeinberg","compositions","plyr","calibrate")
   new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
   if(length(new.packages)) install.packages(new.packages)
   
@@ -32,6 +32,10 @@ logratio_biplot_pca <- function(data.in = data,
   require(calibrate)
   
   source("functions/functions.R")
+  
+  if(identical(relationships,
+               c("UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS"))==F){
+    peel.and.zoom=F}
   
   # Apply QC filters: chr, MAF, hwe, geno, LD
   
