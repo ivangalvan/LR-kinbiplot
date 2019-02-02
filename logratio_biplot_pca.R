@@ -39,21 +39,21 @@ logratio_biplot_pca <- function(data.in = data,
   
   # Apply QC filters: chr, MAF, hwe, geno, LD
   
-  system(paste0("plink2 --bfile  ",data.in," --maf ",MAF," --hwe midp ",hwe," --chr ",chr," --geno ",geno," --make-bed ",
+  system(paste0("plink --bfile  ",data.in," --maf ",MAF," --hwe midp ",hwe," --chr ",chr," --geno ",geno," --make-bed ",
                 "--out  outputs/",data.out,"_qc"))
   
-  system(paste0("plink2 --bfile  outputs/",data.out,"_qc -indep-pairwise ",LD.window," ",LD.step," ",LD.correlation,
+  system(paste0("plink --bfile  outputs/",data.out,"_qc -indep-pairwise ",LD.window," ",LD.step," ",LD.correlation,
                 " --out outputs/",data.out))
   
-  system(paste0("plink2 --bfile  outputs/",data.out,"_qc  --extract  outputs/",data.out,".prune.in ",
+  system(paste0("plink --bfile  outputs/",data.out,"_qc  --extract  outputs/",data.out,".prune.in ",
                 " --make-bed --out  outputs/",data.out,"_qc2"))
   
   # Detect potential unrelated individuals with rel.cutoff
   
-  system(paste0("plink2 --bfile outputs/",data.out,"_qc2 --rel-cutoff ",rel.cutoff,
+  system(paste0("plink --bfile outputs/",data.out,"_qc2 --rel-cutoff ",rel.cutoff,
                 " --out outputs/",data.out))
   
-  system(paste0("plink2 --bfile outputs/",data.out,"_qc2 --keep  outputs/",data.out,".rel.id  ",
+  system(paste0("plink --bfile outputs/",data.out,"_qc2 --keep  outputs/",data.out,".rel.id  ",
                 "--genome full --out outputs/",data.out,"_un"))
   
   genome = fread(paste0("outputs/",data.out,"_un.genome"))
@@ -72,7 +72,7 @@ logratio_biplot_pca <- function(data.in = data,
   
   # Remove potential MZ and PO pairs
   
-  system(paste0("plink2 --bfile outputs/",data.out,"_qc2 ",
+  system(paste0("plink --bfile outputs/",data.out,"_qc2 ",
                 "--genome full --out outputs/",data.out))
   
   genome = fread(paste0("outputs/",data.out,".genome"))
@@ -97,7 +97,7 @@ logratio_biplot_pca <- function(data.in = data,
   
   # Simulate relationships
   
-  system(paste0("plink2 --bfile outputs/",data.out,"_qc2 --keep  outputs/",data.out,".rel.id ",
+  system(paste0("plink --bfile outputs/",data.out,"_qc2 --keep  outputs/",data.out,".rel.id ",
                 "--recode A-transpose --out outputs/",data.out,"_un"))
   
   unrelated = as.data.frame(fread(paste0("outputs/",data.out,"_un.traw")))
@@ -182,7 +182,7 @@ logratio_biplot_pca <- function(data.in = data,
   
   # project empirical data
   
-  system(paste0("plink2 --bfile outputs/",data.out,"_qc2 ",
+  system(paste0("plink --bfile outputs/",data.out,"_qc2 ",
                 "--recode A-transpose --out outputs/",data.out))
   
   Y <- fread(paste0("outputs/",data.out,".traw"))
