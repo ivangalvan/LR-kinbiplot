@@ -20,13 +20,11 @@ Input parameters
 - LD.correlation = 0.2,
 - rel.cutoff = 0.025,
 - mz.ibd2 = 0.7,
-                                po.ibd1 = 0.7,
-                                nsim.rel = 100,
-                                relationships = c("UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS"),
-                                rel.colors = c("forestgreen","darkorange","deeppink2","cyan2",
-                                               "darkgoldenrod2","darkorchid2","black","dodgerblue2"),
-                                peel.and.zoom =TRUE
-
+- po.ibd1 = 0.7,
+- nsim.rel = 100,
+- relationships (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS),
+- rel.colors 
+- peel.and.zoom 
 
 # References
 
