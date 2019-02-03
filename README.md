@@ -1,13 +1,13 @@
 # A log-ratio biplot approach for exploring genetic relatedness based on identity by state
 
-# Dependences:
+# Dependencies:
 
 - R (https://www.r-project.org/)
 - PLINK 1.9 (https://www.cog-genomics.org/plink2/)
 
 # logratio_biplot_pca() function
 
-Input parameters
+Input parameters:
 
 - data.in: the path of your PLINK files 
 - data.out: the name of your dataset
