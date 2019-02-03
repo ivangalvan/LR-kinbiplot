@@ -16,7 +16,7 @@ Input parameters:
 | chr  | chromosomes used for the analysis (default 1-22)  |
 | geno  | missing call rate threshold (default 0) |
 | hwe  | (default 0.05)  |
-| MAF  | minor allele frequency threshold   |
+| MAF  | minor allele frequency threshold (default 0.40)  |
 | LD.window  |  (default 50) |
 | LD.step  | (default 5)  |
 | LD.correlation  | (default 0.2)  |
@@ -27,6 +27,23 @@ Input parameters:
 | relationships  | (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS)  |
 | rel.colors  | (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
 | peel.and.zoom  | (default TRUE) |
+
+# Example
+
+```
+setwd("github")
+source("logratio_biplot_pca.R")
+
+# logratio biplot with "UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS" relationships and peel and zoom approach
+
+my_logpca = logratio_biplot_pca(data.in="data/CEU",
+                                data.out = "CEU_population",
+                                nsim.rel = 20,
+                                peel.and.zoom = T)
+
+table(my_logpca$pairs.ids$prediction)
+```
+
 
 # References
 
