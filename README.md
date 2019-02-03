@@ -15,11 +15,11 @@ Input parameters:
 | data.out  |  name of your dataset  |
 | chr  | chromosomes used for the analysis (default 1-22)  |
 | geno  | missing call rate threshold (default 0) |
-| hwe  | (default 0.05)  |
+| hwe  | Hardy Weingberg Equilirbium mid p-value threshold (default 0.05)  |
 | MAF  | minor allele frequency threshold (default 0.40)  |
-| LD.window  |  (default 50) |
-| LD.step  | (default 5)  |
-| LD.correlation  | (default 0.2)  |
+| LD.window  | LD window size in kb (default 50) |
+| LD.step  | number of variants to shift the window at each step (default 5)  |
+| LD.correlation  | pairwise LD correlation (r<sup>2</sup>) threshold (default 0.2)  |
 | rel.cutoff  | (default 0.025)  |
 | mz.ibd2  | (default 0.7)  |
 | po.ibd1  | (default 0.7)  |
@@ -34,7 +34,7 @@ Input parameters:
 setwd("github")
 source("logratio_biplot_pca.R")
 
-# logratio biplot with "UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS" relationships and peel and zoom approach
+# logratio biplot with UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS relationships and peel and zoom approach
 
 my_logpca = logratio_biplot_pca(data.in="data/CEU",
                                 data.out = "CEU_population",
