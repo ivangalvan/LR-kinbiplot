@@ -37,8 +37,8 @@ Input parameters:
 | mz.ibd2  | IBD2 threshold to detect potential MZ pairs (default 0.7)  |
 | po.ibd1  | IBD1 threshold to detect potential PO pairs (default 0.7)  |
 | relationships  | predicted relationships in the analysis (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS)  |
-| nsim.rel | number of simulations for each relationship used as training set (default 20)  |
-| rel.colors  | colors for each relationship (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
+| nsim.rel | number of simulations for each relationship used as training set (default 20). The prediction of relationships is sensitive to this parameter. We recommend using nsim.rel = 100  |
+| rel.colors  | colors used to represent each predicted relationship in the log-ratio biplot (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
 | peel.and.zoom  | peel and zoom log-ratio biplot approach (default TRUE) |
 
 # Example of the CEU population from 1000Genomes project
@@ -55,6 +55,9 @@ my_logpca = logratio_biplot_pca(data.in="data/CEU",
                                 peel.and.zoom = T)
 
 table(my_logpca$pairs.ids$prediction)
+
+  2ND  3.4S   3RD   4TH   5TH   6TH    FS    UN 
+    2     0     1     5    22  2884     1 10519
 ```
 
 
