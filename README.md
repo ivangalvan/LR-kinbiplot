@@ -25,8 +25,8 @@ Input parameters:
 | po.ibd1  | (default 0.7)  |
 | nsim.rel | (default 20)  |
 | relationships  | (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS)  |
-| rel.colors  | (default 0.2)  |
-| peel.and.zoom  | (default "forestgreen","darkorange","deeppink2","cyan2","darkgoldenrod2","darkorchid2","black","dodgerblue2") |
+| rel.colors  | (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
+| peel.and.zoom  | (default TRUE) |
 
 # References
 
