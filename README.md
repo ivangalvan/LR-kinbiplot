@@ -43,6 +43,8 @@ Input parameters:
 
 # Example of the CEU population from 1000Genomes project
 
+Log-ratio biplot analysis for 165 individuals and 1,457,897 variants from the CEU population. Computation time: 7 minutes in a single CPU processor (Intel Core i5-4300U, 1.90-2.50 GHz, 64bits) with 4GB RAM.   
+
 ```
 setwd("github")
 source("logratio_biplot_pca.R")
