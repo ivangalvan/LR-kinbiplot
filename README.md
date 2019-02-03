@@ -34,14 +34,14 @@ Input parameters:
 | LD.step  | number of variants to shift the window at each step (default 5)  |
 | LD.correlation  | pairwise LD correlation (r<sup>2</sup>) threshold (default 0.2)  |
 | rel.cutoff  | kinship coefficient threshold to detect potential unrelated individuals (default 0.025)  |
-| mz.ibd2  | IBD2 threshold to detect potential MZ individuals (default 0.7)  |
-| po.ibd1  | (default 0.7)  |
-| nsim.rel | (default 20)  |
-| relationships  | (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS)  |
-| rel.colors  | (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
-| peel.and.zoom  | (default TRUE) |
+| mz.ibd2  | IBD2 threshold to detect potential MZ pairs (default 0.7)  |
+| po.ibd1  | IBD1 threshold to detect potential PO pairs (default 0.7)  |
+| relationships  | predicted relationships in the analysis (default UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS)  |
+| nsim.rel | number of simulations for each relationship used as training set (default 20)  |
+| rel.colors  | colors for each relationship (default forestgreen, darkorange, deeppink2, cyan2, darkgoldenrod2, darkorchid2, black and dodgerblue2)  |
+| peel.and.zoom  | peel and zoom log-ratio biplot approach (default TRUE) |
 
-# Example
+# Example of the CEU population from 1000Genomes project
 
 ```
 setwd("github")
