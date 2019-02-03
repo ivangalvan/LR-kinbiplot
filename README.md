@@ -28,7 +28,7 @@ Input parameters:
 | data.out  |  name of your dataset (no spaces allowed)  |
 | chr  | chromosomes used for the analysis (default 1-22)  |
 | geno  | missing call rate threshold (default 0) |
-| hwe  | Hardy Weingberg Equilirbium mid p-value threshold (default 0.05)  |
+| hwe  | Hardy Weingberg equilirbium mid p-value threshold (default 0.05)  |
 | MAF  | minor allele frequency threshold (default 0.40)  |
 | LD.window  | LD window size in kb (default 50) |
 | LD.step  | number of variants to shift the window at each step (default 5)  |
