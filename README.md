@@ -62,14 +62,12 @@ table(my_logpca$pairs.ids$prediction)
     2     0     1     5    22  2884     1 10519
 ```
 
+![alt text](https://github.com/ivangalvan/logratio_biplot_pca/blob/master/plots/CEU_population_logratio_biplot_pca_peel_and_zoom.png)
+
 
 # References
 
 - Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ (2015) Second-generation PLINK: rising to the challenge of larger and richer datasets. GigaScience, 4.
 - Graffelman J, Moreno V (2013). The mid p-value in exact tests for Hardy-Weinberg equilibrium. Statistical applications in genetics and molecular biology, 12(4), 433-448.
 - Graffelman J, Galván-Femenía I, de Cid R, Barceló-i-Vidal C. A log-ratio biplot approach for exploring genetic relatedness based on identity by state. 
-
-# Peel and zoom approach
-
-![alt text](https://github.com/ivangalvan/logratio_biplot_pca/blob/master/plots/CEU_population_logratio_biplot_pca_peel_and_zoom.png)
 
