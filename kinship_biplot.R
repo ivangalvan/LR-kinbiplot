@@ -1,4 +1,4 @@
-logratio_biplot_pca <- function(data.in = data,
+kinship_biplot <- function(data.in = data,
                                 data.out = "study",
                                 chr = "1-22",
                                 geno = 0,
@@ -10,7 +10,7 @@ logratio_biplot_pca <- function(data.in = data,
                                 rel.cutoff = 0.025,
                                 mz.ibd2 = 0.7,
                                 po.ibd1 = 0.7,
-                                nsim.rel = 20,
+                                nsim.rel = 100,
                                 relationships = c("UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS"),
                                 rel.colors = c("forestgreen","darkorange","deeppink2","cyan2",
                                                "darkgoldenrod2","darkorchid2","black","dodgerblue2"),
@@ -179,6 +179,23 @@ logratio_biplot_pca <- function(data.in = data,
   legend("topright",rel_label,col=rel.colors,pch=16)  
   title(paste0("logratio PCA: simulated related pairs"))
     dev.off()
+  
+    
+  # compute confussion matrix of simulated data
+  
+  Fp = as.data.frame(Fp)
+  
+  Fp$relationship = sim_data$relationship          
+  
+  my_lda = lda(relationship ~ V1+V2+V3,data = Fp)  
+    
+  my_prediction = predict(my_lda,Fp)
+  
+  conf_mat = table(Fp$relationship,my_prediction$class)
+  
+  cat("Confusion matrix for simulated relationships (%): \n ")
+  print((conf_mat/nsim.rel)*100)
+  
   
   # project empirical data
   
@@ -622,7 +639,8 @@ logratio_biplot_pca <- function(data.in = data,
               pca5=logpca$pca5,
               Fp=logpca$Fp,
               Gs=logpca$Gs,
-              pairs.ids = pair_ids))
+              pairs.ids = pair_ids,
+              conf.matrix.sim = (conf_mat/nsim.rel)*100))
   
 }
 
