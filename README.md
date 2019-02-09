@@ -18,7 +18,7 @@ Relatedness:
 - R (https://www.r-project.org/)
 - PLINK 1.9 (https://www.cog-genomics.org/plink2/)
 
-# kinship_biplot() function
+# LR-kinbiplot() function
 
 Input parameters:
 
@@ -47,16 +47,16 @@ Log-ratio biplot analysis for 165 individuals and 1,457,897 variants from the CE
 
 ```
 setwd("github")
-source("kinship_biplot.R")
+source("LR-kinbiplot.R")
 
 # logratio biplot with UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS relationships and peel and zoom approach
 
-my_logpca = kinship_biplot(data.in="data/CEU",
+logpca = LR-kinbiplot(data.in="data/CEU",
                                 data.out = "CEU_population",
                                 nsim.rel = 20,
                                 peel.and.zoom = T)
 
-table(my_logpca$pairs.ids$prediction)
+table(logpca$pairs.ids$prediction)
 
   2ND  3.4S   3RD   4TH   5TH   6TH    FS    UN 
     2     0     1     5    22  2884     1 10519
