@@ -1,6 +1,6 @@
 setwd("github")
 
-source("LR_kinbiplot.R")
+source("LR-kinbiplot.R")
 
 
 # logratio biplot with "UN","6TH","5TH","4TH","3RD","2ND","3.4S","FS" relationships 
