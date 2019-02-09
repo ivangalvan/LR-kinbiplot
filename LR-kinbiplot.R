@@ -1,4 +1,4 @@
-LR-kinbiplot <- function(data.in = data,
+LR_kinbiplot <- function(data.in = data,
                                 data.out = "study",
                                 chr = "1-22",
                                 geno = 0,
