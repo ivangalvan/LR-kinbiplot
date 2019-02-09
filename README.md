@@ -18,7 +18,7 @@ Relatedness:
 - R (https://www.r-project.org/)
 - PLINK 1.9 (https://www.cog-genomics.org/plink2/)
 
-# LR-kinbiplot() function
+# LR_kinbiplot() function
 
 Input parameters:
 
@@ -51,7 +51,7 @@ source("LR-kinbiplot.R")
 
 # logratio biplot with UN, 6TH, 5TH, 4TH, 3RD, 2ND, 3/4S and FS relationships and peel and zoom approach
 
-logpca = LR-kinbiplot(data.in="data/CEU",
+logpca = LR_kinbiplot(data.in="data/CEU",
                                 data.out = "CEU_population",
                                 nsim.rel = 20,
                                 peel.and.zoom = T)
