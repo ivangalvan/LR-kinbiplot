@@ -19,7 +19,7 @@ LR_kinbiplot <- function(data.in = data,
   dir.create("outputs")
   dir.create("outputs/plots")
   
-  list.of.packages <- c("data.table","dplyr","HardyWeinberg","compositions","plyr","calibrate")
+  list.of.packages <- c("data.table","dplyr","HardyWeinberg","compositions","plyr","calibrate","BMhyb")
   new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
   if(length(new.packages)) install.packages(new.packages)
   
@@ -30,6 +30,7 @@ LR_kinbiplot <- function(data.in = data,
   require(compositions)
   require(MASS)
   require(calibrate)
+  require(BMhyb)
   
   source("functions/functions.R")
   
@@ -280,13 +281,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:7){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -330,13 +331,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:5){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -378,13 +379,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:4){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -428,13 +429,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:3){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -479,13 +480,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:2){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -531,13 +532,13 @@ LR_kinbiplot <- function(data.in = data,
   points(logpca$empirical[,dim1],logpca$empirical[,dim2],
          col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
   
-  Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+  PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                   ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                   lcolor = "gray")
   
   for(i in 1:2){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
   }
@@ -585,14 +586,14 @@ LR_kinbiplot <- function(data.in = data,
            col=as.character(logpca$prediction),pch=1,cex=0.8,asp=1)
     
     
-    Plot_ConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[1:(nsim.rel),dim1], 
                     ycoord = logpca$Fp[1:(nsim.rel),dim2], 
                     lcolor = "gray")
     
     
     for(i in 1:(length(relationships)-1)){
     
-    Plot_ConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
+    PlotConvexHull(xcoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim1], 
                     ycoord = logpca$Fp[((nsim.rel)*i+1):((nsim.rel)*(i+1)),dim2], 
                     lcolor = "gray")
     }
