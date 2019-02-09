@@ -1,4 +1,4 @@
-kinship_biplot <- function(data.in = data,
+LR-kinbiplot <- function(data.in = data,
                                 data.out = "study",
                                 chr = "1-22",
                                 geno = 0,
