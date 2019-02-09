@@ -1,10 +1,3 @@
-Plot_ConvexHull<-function(xcoord, ycoord, lcolor){
-  hpts <- chull(x = xcoord, y = ycoord)
-  hpts <- c(hpts, hpts[1])
-  lines(xcoord[hpts], ycoord[hpts], col = lcolor,lwd=1)
-} 
-
-
 gametes <- function(x) {
   individual <- cbind(substr(x,1,1),substr(x,2,2))
   thealleles <- apply(individual,1,sample,1)
