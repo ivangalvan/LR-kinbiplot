@@ -69,5 +69,5 @@ table(logpca$pairs.ids$prediction)
 
 - Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ (2015) Second-generation PLINK: rising to the challenge of larger and richer datasets. GigaScience, 4.
 - Graffelman J, Moreno V (2013). The mid p-value in exact tests for Hardy-Weinberg equilibrium. Statistical applications in genetics and molecular biology, 12(4), 433-448.
-- Graffelman J, Galván-Femenía I, de Cid R, Barceló-i-Vidal C. A log-ratio biplot approach for exploring genetic relatedness based on identity by state. 
+- Graffelman J, Galván Femenía I, de Cid R and Barceló Vidal C (2019) A Log-Ratio Biplot Approach for Exploring Genetic Relatedness Based on Identity by State. Front. Genet. 10:341. doi: 10.3389/fgene.2019.00341
 
